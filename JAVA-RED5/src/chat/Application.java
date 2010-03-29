@@ -10,19 +10,14 @@ import org.red5.server.api.ScopeUtils;
 import org.red5.server.api.so.ISharedObjectService;
 import org.red5.server.api.*;
 import org.red5.server.api.scheduling.*;
-import org.red5.samples.components.ClientManager;
-import org.red5.server.api.service.ServiceUtils;
+import org.red5.components.ClientManager;
 import org.red5.server.api.service.*;
-import org.red5.server.api.service.IPendingServiceCallback;
 
 //
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.util.*;
-import java.util.HashMap;
-//
-//
 
 public class Application extends ApplicationAdapter{	
 	public HashMap<String,User> users = new HashMap<String,User>();
@@ -163,7 +158,7 @@ public class Application extends ApplicationAdapter{
 	}
 	public void send_to_all_iterate() {
 		IConnection current = Red5.getConnectionLocal();
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		
 		while (it.hasNext()) {
 		IConnection conn = it.next();
@@ -229,7 +224,7 @@ public class Application extends ApplicationAdapter{
 	 */
 	public void send_private_id(String sendToId,String fromPseudo, String msg) {
 		//IConnection current = Red5.getConnectionLocal();
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		log.debug("send_private to "+sendToId+" "+msg);
 		//String uid = scope.getClient().getId();
 		while (it.hasNext()) {
@@ -251,7 +246,7 @@ public class Application extends ApplicationAdapter{
         IConnection conn2 = Red5.getConnectionLocal();
 	    String uid = conn2.getClient().getId();
 	    
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		log.debug("watches "+UserId);
 		while (it.hasNext()) {
 		IConnection conn = it.next();
@@ -269,7 +264,7 @@ public class Application extends ApplicationAdapter{
 	 * ban the user _id
 	 */
 	public void ban(String _id) {
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		//log.debug("ban called: "+_id);
 		while (it.hasNext()) {
 		IConnection conn = it.next();
@@ -285,7 +280,7 @@ public class Application extends ApplicationAdapter{
 	 * kick the user _id
 	 */
 	public void kick(String _id) {
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		//log.debug("kick called: "+_id);
 		while (it.hasNext()) {
 		IConnection conn = it.next();
@@ -302,7 +297,7 @@ public class Application extends ApplicationAdapter{
 	 */
 	public void send_private(String fromPseudo, String DestinationID,String msg) {
 		//IConnection current = Red5.getConnectionLocal();
-		Iterator<IConnection> it = scope.getConnections();
+		Iterator<IConnection> it = (Iterator<IConnection>) scope.getConnections();
 		log.debug("send_private to "+DestinationID+" "+msg);
 		//String uid = scope.getClient().getId();
 		while (it.hasNext()) {
@@ -387,10 +382,10 @@ public class Application extends ApplicationAdapter{
 		//String password=(String)params[2];
 		//String sexe=(String)params[3];
 		//String status=(String)params[4];
-		// cherche si user déjà dans la liste 
+		// cherche si user dï¿½jï¿½ dans la liste 
 		//Cuser user=new Cuser(id,username,password,sexe,status);
 		/*if (this.list[UserName]) {
-			application.rejectConnection(newClient, {msg:"Nom déjà utilisé, essayez de nouveau."});
+			application.rejectConnection(newClient, {msg:"Nom dï¿½jï¿½ utilisï¿½, essayez de nouveau."});
 			trace("### name taken");
 			return;
 		} 
