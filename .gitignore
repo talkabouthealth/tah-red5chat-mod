@@ -1,6 +1,6 @@
+*.swd
 build/*
 .*
 *.class
-*.swf
 *~
 !.gitignore
