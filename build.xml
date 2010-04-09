@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tah-red5chat-mod Project" default="compile" basedir=".">
+	  <!-- set global properties for this build -->
+	  <property name="src" location="./JAVA-RED5/src"/>
+	  <property name="build" location="./build/classes"/>
+	  <property name="dist" location="./WebContent/WEB-INF/lib/app.jar" />
+	  <property name="pub"  location="/home/e/repos/red5-0.9.1/webapps/tah/WEB-INF/lib/app.jar"/>
+	  
+	  
+<target name="clean" description="Clean output directories">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+	<delete dir="${pub}"/>
+	<mkdir dir="${build}"/>
+</target>
+
+<target name="compile" depends="clean">
+	<javac srcdir="${src}" destdir="${build}" >
+		
+		<classpath>
+			<pathelement location="/home/e/repos/red5-0.9.1/red5.jar" />
+			<pathelement location="/home/e/repos/red5-0.9.1/lib/spring-core-3.0.0.jar" />
+			<fileset dir="./JAVA-RED5/lib/commons-logging-1.1.1">
+        		<include name="**/*.jar"/>
+      		</fileset>
+		</classpath>
+	</javac>
+</target>
+
+<target name = "jar" depends ="compile">
+<echo message ="Getting class files from classes directory"/>
+<jar destfile="${dist}" basedir="${build}" />
+<echo message ="jar creation done"/>
+<copy file ="${dist}" tofile ="${pub}"/>
+<echo message="jar copied to red5"/>
+</target>
+</project>
