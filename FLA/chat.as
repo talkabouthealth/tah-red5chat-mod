@@ -104,7 +104,7 @@ function enterFriendRoom() {
 	_root.room="chat";
 	_root.rtmpString = "rtmp://"+_root.IP+':'+_root.port+"/"+_root.room;
 	init_chat();
-	TransitionManager.start(rooms_mc, {type:Squeeze, direction:1, duration:2, easing:Elastic.easeIn, dimension:1});
+	//TransitionManager.start(rooms_mc, {type:Squeeze, direction:1, duration:2, easing:Elastic.easeIn, dimension:1});
 }
 function enterLoveRoom() {
 	_root.room="chat";
@@ -1122,9 +1122,11 @@ function initMenu() {
 
 function init_rooms() {
 	login_msg("");
-	_root.Application._visible=false;
-	_root.login._visible=false;
-	TransitionManager.start(rooms_mc, {type:Squeeze, direction:Transition.IN, duration:2, easing:Elastic.easeOut, dimension:1});
+	//_root.Application._visible=false;
+	//_root.login._visible=false;
+	_root.rooms_mc._visible=false;
+	enterFriendRoom();
+	//TransitionManager.start(rooms_mc, {type:Squeeze, direction:Transition.IN, duration:2, easing:Elastic.easeOut, dimension:1});
 }
 
 
