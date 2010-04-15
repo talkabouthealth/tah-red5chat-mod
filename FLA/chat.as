@@ -1159,6 +1159,7 @@ _root.login.sex_mc._visible=false;
 		login_chat();	
 		} else {
 		//no auto connect
+		login_chat();	
 		}
 }
 function checklogin(pseudo) {
@@ -1184,6 +1185,7 @@ _root.login.login_pb.onPress=function() {
 
 function login_chat() {
 //	_root.login.login_pb.enabled=false;
+	_root.pseudo = "ssssssssssss";
 	_root.user=new User(_root.pseudo,_root.webcam,_root.password,"true",_root.role,_root.sex,_root.room,_root.world);
 	//trace("_root.user.onlinseStatus="+_root.user.onlineStatus);
 	//trace("_root.user.pseudo="+_root.user.pseudo);
@@ -1260,7 +1262,7 @@ function enter_chat() {
 	if(_root.Application.myMenuBar.initiated!=true) initMenu();
 	getUserList(); // get list of connected users
 	//_root.login._visible=false;
-	TransitionManager.start(login, {type:Squeeze, direction:1, duration:1, easing:Elastic.easeIn, dimension:1});
+	//TransitionManager.start(login, {type:Squeeze, direction:1, duration:1, easing:Elastic.easeIn, dimension:1});
 	enable_GUI();
 	publishMyWebcam();
 	

@@ -17,7 +17,6 @@
 
 <target name="compile" depends="clean">
 	<javac srcdir="${src}" destdir="${build}" >
-		
 		<classpath>
 			<pathelement location="/home/e/repos/red5-0.9.1/red5.jar" />
 			<pathelement location="/home/e/repos/red5-0.9.1/lib/spring-core-3.0.0.jar" />
