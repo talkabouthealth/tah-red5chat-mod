@@ -1123,7 +1123,7 @@ function initMenu() {
 function init_rooms() {
 	login_msg("");
 	//_root.Application._visible=false;
-	//_root.login._visible=false;
+	root.login._visible=false;
 	_root.rooms_mc._visible=false;
 	enterFriendRoom();
 	//TransitionManager.start(rooms_mc, {type:Squeeze, direction:Transition.IN, duration:2, easing:Elastic.easeOut, dimension:1});
@@ -1148,7 +1148,7 @@ _root.login.sex_mc._visible=false;
 		}
 		_root.login.login_txt.text=_root.pseudo;
 	}
-	TransitionManager.start(login, {type:Squeeze, direction:Transition.IN, duration:2, easing:Elastic.easeOut, dimension:1});
+//	TransitionManager.start(login, {type:Squeeze, direction:Transition.IN, duration:2, easing:Elastic.easeOut, dimension:1});
 //	nc.connect(_root.rtmpString,"connectTemp");
 	trace("connecting as connectTemp");
 	disable_GUI();
@@ -1302,7 +1302,8 @@ function disable_GUI() {
 	_root.Application.privateChatMask_mc.useHandCursor=false;
 	_root.Application.privateCacheHeader_mc._visible=false;
 	_root.Application._visible=true;
-	_root.login._visible=true;
+//	_root.login._visible=true;
+	_root.login._visible=false;
 	
 	_root.online=true;
 	_root.Application.lockUnlock_btn._visible=false;
