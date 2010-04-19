@@ -294,9 +294,16 @@ Password:
 Red5Chat.com
 -->
 <!-- saved from url=(0013)about:internet -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+String userid = request.getParameter("id");
+//out.print(userid);
+%>
+
 <script language="JavaScript" type="text/javascript">
 	AC_FL_RunContent(
-		'FlashVars', 'userid=testuser',
+		'FlashVars', 'userid=<%out.print(userid);%>',
 		'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
 		'width', '1024',
 		'height', '675',
@@ -324,8 +331,8 @@ Red5Chat.com
 	<param name="allowScriptAccess" value="sameDomain" />
 	<param name="allowFullScreen" value="false" />
 	<param name="movie" value="red5chat.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#066cbd" />	
-	<param name="FlashVars" value="userid=testuser">
-	<embed src="red5chat.swf" FlashVars="userid=testuser" quality="high" bgcolor="#066cbd" width="1024" height="675" name="red5chat" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+	<param name="FlashVars" value="userid=<%out.print(userid);%>">
+	<embed src="red5chat.swf" FlashVars="userid=<%out.print(userid);%>" quality="high" bgcolor="#066cbd" width="1024" height="675" name="red5chat" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
 	</object>
 </noscript>
 </body>
