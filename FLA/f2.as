@@ -5,12 +5,12 @@ ASSetPropFlags(Object.prototype, "copyProperties", 1);
 #include "css.as"
 #include "chat.as"
 
-_root.IP="127.0.0.1";
+_root.IP="talkabouthealth.com";
 _root.port = 1935;
 _root.room="chat";
 _root.debug = false;
 if (_root.debug == true) {
-	_root.IP = "127.0.0.1";
+	_root.IP = "talkabouthealth.com";
 	_root.port = "1935";
 	_root.pseudo="yarek";
 	_root.sexe="f";

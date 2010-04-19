@@ -1185,7 +1185,12 @@ _root.login.login_pb.onPress=function() {
 
 function login_chat() {
 //	_root.login.login_pb.enabled=false;
-	_root.pseudo = "ssssssssssss";
+	if (_level0.userid == undefined) {
+		_root.pseudo = "ssssssssssss";
+	} else {
+		_root.pseudo = 	_level0.userid;
+	}
+	
 	_root.user=new User(_root.pseudo,_root.webcam,_root.password,"true",_root.role,_root.sex,_root.room,_root.world);
 	//trace("_root.user.onlinseStatus="+_root.user.onlineStatus);
 	//trace("_root.user.pseudo="+_root.user.pseudo);
