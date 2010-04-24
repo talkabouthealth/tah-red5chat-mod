@@ -1,3 +1,4 @@
+WebContent/persistence/*
 WebContent/WEB-INF/lib/*
 *.swd
 build/*
