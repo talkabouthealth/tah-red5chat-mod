@@ -1,3 +1,4 @@
+WebContent/CommApp.swf
 WebContent/persistence/*
 WebContent/WEB-INF/lib/*
 *.swd
@@ -6,3 +7,4 @@ build/*
 *.class
 *~
 !.gitignore
+
