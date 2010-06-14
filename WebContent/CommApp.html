@@ -38,6 +38,8 @@
             <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
             var xiSwfUrlStr = "playerProductInstall.swf";
             var flashvars = {};
+            flashvars.userid = 'userid_fl';
+            flashvars.topic = 'topic_fl';
             var params = {};
             params.quality = "high";
             params.bgcolor = "#ffffff";
@@ -78,12 +80,14 @@
                 <param name="movie" value="CommApp.swf" />
                 <param name="quality" value="high" />
                 <param name="bgcolor" value="#ffffff" />
+                <param name="FlashVars" value="userid=1&topic=2" />
                 <param name="allowScriptAccess" value="sameDomain" />
                 <param name="allowFullScreen" value="true" />
                 <!--[if !IE]>-->
                 <object type="application/x-shockwave-flash" data="CommApp.swf" width="849" height="601">
                     <param name="quality" value="high" />
                     <param name="bgcolor" value="#ffffff" />
+                    <param name="FlashVars" value="userid=3&topic=4" />
                     <param name="allowScriptAccess" value="sameDomain" />
                     <param name="allowFullScreen" value="true" />
                 <!--<![endif]-->
