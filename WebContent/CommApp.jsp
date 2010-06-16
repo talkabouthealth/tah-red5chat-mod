@@ -1,6 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0014)about:internet -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">	
+<%
+String userid = request.getParameter("id");
+String topic = request.getParameter("t");
+%>
     <!-- 
     Smart developers always View Source. 
     
@@ -38,8 +42,8 @@
             <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
             var xiSwfUrlStr = "playerProductInstall.swf";
             var flashvars = {};
-            flashvars.userid = 'userid_fl';
-            flashvars.topic = 'topic_fl';
+            flashvars.userid = '<%= userid %>';
+            flashvars.topic = '<%= topic %>';
             var params = {};
             params.quality = "high";
             params.bgcolor = "#ffffff";
@@ -80,14 +84,14 @@
                 <param name="movie" value="CommApp.swf" />
                 <param name="quality" value="high" />
                 <param name="bgcolor" value="#ffffff" />
-                <param name="FlashVars" value="userid=1&topic=2" />
+                <param name="FlashVars" value="userid=<%= userid %>&topic=<%= topic %>" />
                 <param name="allowScriptAccess" value="sameDomain" />
                 <param name="allowFullScreen" value="true" />
                 <!--[if !IE]>-->
                 <object type="application/x-shockwave-flash" data="CommApp.swf" width="849" height="601">
                     <param name="quality" value="high" />
                     <param name="bgcolor" value="#ffffff" />
-                    <param name="FlashVars" value="userid=3&topic=4" />
+                    <param name="FlashVars" value="userid=<%= userid %>&topic=<%= topic %>" />
                     <param name="allowScriptAccess" value="sameDomain" />
                     <param name="allowFullScreen" value="true" />
                 <!--<![endif]-->
