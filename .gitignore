@@ -1,6 +1,7 @@
 WebContent/CommApp.swf
 WebContent/persistence/*
 WebContent/WEB-INF/lib/*
+WebContent/WEB-INF/classes/*
 *.swd
 build/*
 .*
